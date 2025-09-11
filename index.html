@@ -1,235 +1,430 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DigitalBoost - Modern Digital Marketing Agency</title>
-    <link rel="stylesheet" href="./style.css">
+
+    <title>Digital Marketing</title>
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css"
+        integrity="sha512-YFENbnqHbCRmJt5d+9lHimyEMt8LKSNTMLSaHjvsclnZGICeY/0KYEeiHwD1Ux4Tcao0h60tdcMv+0GljvWyHg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2>Digital Marketing</h2>
+    <header class="container-fluid">
+        <div id="nav" class="flex font-poppins">
+            <div class="nav-brand">
+                <a href="#" class="text-dark text-lg font-bold">Digital Marketing</a>
             </div>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="toggle-btn">
+                <button class="btn">
+                    <i class="bi bi-filter-right"></i>
+                </button>
             </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Boost Your Digital Presence</h1>
-            <p class="hero-subtitle">We help businesses grow with cutting-edge digital marketing strategies and innovative solutions</p>
-            <div class="hero-buttons">
-                <button class="btn-primary">Get Started</button>
-                <button class="btn-secondary">Learn More</button>
+            <div class="collapse flex-grow">
+                <ul class="flex">
+                    <li>
+                        <a href="#" class="link">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="link">About</a>
+                    </li>
+                    <li>
+                        <a href="#" class="link">Services</a>
+                    </li>
+                    <li>
+                        <a href="#" class="link">DM pic</a>
+                    </li>
+                    <li>
+                        <a href="#" class="link">Contact</a>
+                    </li>
+                </ul>
             </div>
-        </div>
-        <div class="hero-image">
-            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUSExMVFRUWFhUXFxUWFxgVFhUYFRUWFxgVFRUYHSggGBolGxcXITEiJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy0lICUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALcBEwMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAEBQMGAAIHAQj/xABCEAACAQIEAwUFBQYEBQUAAAABAgMAEQQFEiEGMUETIlFhcTKBkbHBByNCodEUUnKy4fBigsLxFjOi0uIVJFNzkv/EABkBAAMBAQEAAAAAAAAAAAAAAAIDBAEABf/EACURAAICAgICAgIDAQAAAAAAAAABAhEDIRIxIkEEE1GRFCOBYf/aAAwDAQACEQMRAD8A64DWwqNakFKoZZuK9rwVlbRx6K9qOWQKLmqzj+L4kJGrcVplkHG+cmNdKmxY2/WqDiMWSpN604kzgzy6vwjl+tK8VP3KPG6sVkV0BvJqJqPFHu1BHJvXuLfu1uJXFszM6mkK2aotVeSNWimsghmRng2NNMA24paRei8FJY1bh06PN+T5RsdY+UKtzzqr4zGljRuKcsd6WTREGszyfoL4sI9vsjVutMMNjrc6XAV7apWrL06H+HzJSbVBnx5WNLYYje/hWYqUk+lcoJbOeRy0D1sBWVlaYSLUyGoFqRTTIsCSC0aioXpcrUdhBc1RjlslyRpWMEa1TpNQku1aoxquOSiJwUlY0Weup8H4wyQKT4Vx1XrrvBRXsEt4Cg+TkuAfx8dTLC5qB6maoHrz+RfxBpaDlo6UUHKKyzaAzXlblayss2i9KakBodTUimkUU2Sg1tUYNbA1xwn4sxfZws3gpPwFcdi7/eJ866R9pGMVcO4vuRYeZPSuaZZl2JeyiNgD1bYeu9dFxUvIGak4+JBjGANqW4qfpXTsNwRAE+8u7nmbkfADlVezb7P5dV4mGnwbe3v60DzRbaQccMkk2UgNR+CyufE7Qxl7czyUerHarpkP2bgkPPLqUc0Uab+RPO1dBghihTRGgVRsLC1GsqjGkDLC5ytnztnGTTwH72MqPHmPiKAj3r6LzPKY5EIZQwPQ1x7ivhNsMxkjF4z06r/Suw5fKpG5sb43Eq61LHsa8K1uK9CKo8ucrJL71rjUBW9eg1vp1CmNWqExfGSYvw2HvRRwYo3DQhQSaBxWK50rjGK2UfZOcvE8Lqq0tJvvW7Neo6nk7LIR4oysrK2Vb7UIZsgrAaKkwxRd+tBii6ATskU02wOwvSZTvTWGXanYpbJ/kptUGlr0PJNas17VY/s/4aOKm7eQfcRm+/KRhyUeIB5/703NlUFbEfHwucqGnCvA5ljE2JZkVhdYxsxHQsel/Cn2DiTASBBIdDHZXPsnyb9aa59nKxC9+XIVy/Pc3Mz6jyHKvNWec5d6PX/jQjHrZ2tHDC4rRq55wVxcEAhmbu/hY9PI+VdCVwwuDcHqKYpWIcWiGQULIKMkoeQVoIGVrKlK17XHFnBqVTUANb67UuhpOGoHH5gFBseQ3qvcS8VpCpAPe6Dqa1y1S2HDSHvyd4+V+QocjcY2FjqUqFOYYuMyK8t3N+6D7I87eNMFYvuNvSluZ5cGBB91S8J47cwy+0OR/eFee25vyPRqMY+KCxj2hca91PXwqzxOjrcHmKRZzhe6driq/gs7fDOEkv2ZNg37vr5UUW4umA4qatFqxjGK5vYflVG4s4wlBCIQtiDqG97dKtOfjt4ToNxbYiuVZ7hz2bX5qaZFXJK9HdQcq2dC4U4/incQy9xyNifZY+Rp9m+TJNclu7auE5NlcuJcCIcrXfkF9/jXT8IkkUXZS4su1uewI/vzqjPGEeif48pze1Rz7ifK/wBnnKA3U7g/SlN6ZcRQukxDvr8D5UravQxSbgmzyvkQUcrikSXomKUKKX9pUUk9F9qQv+O5BOLxhNLna9YxrWp5ScmW48agtGwrKwCtrVgRqBVl4PwEck33m+kAgHkTVcjG9PsqBBuK1LTYEpeSQXxxoWTQlrAdOhPSqrTPNWLuT50EYq5RdBclZEqE8t6LwzdKuX2bZOkgkkYX30i9WTB8BRzYh5X2iFlCDbU3Uk+FZzUNszi8mkUrhbJTjMQsO4QDVIw6KOl+hPL4+FdWxk0eHhEcYCogsAOW1F5Zk2GwcbmJAuo97re3jeqdm8zYqURRbksb25Ko/E1R/JzPIy/4nxlji7/0B72PxOgPpQbk8yB5DqTTCTgaEA6ncnpaw+NWXBYCLDIAoFwLFup8d/Wq5xBxSsd1Sxb42pXWkNuxK+W4aO+24/ea5NS4XieSPZGsB05j4VUMVmLOxYkkmoopGc2FMUH22KlJPSR0nLONHaVUkVdLELqHME8quLiuOwQBbEncWI9RXUeH8zGIhDfiGzDzHX303FO9E+aFbSDCK8rcispwgeA0JmmOVENz0qZ3sKAnwOvdt6BtLsYk3pHLczwjSTs1j3mA+lXfM8cIOzQ7DSN+lNYshGoOwFhuBSDjdQ8Z8qRmyc0ijBjUG/dhjzCWO6kH0qt5lhWTv6tLA3U+dVvJ87fCyX3ZD7Sn5irLxUhliWRT3DvtSJQKouix8N54uJiIb202YfUVUOLM3HaGILsBY0j4dzIwYpDfuv3W9/I054mymSTEDskZ2e1gouSTv8gfhROPSZidW0G/ZxnYIbCueVyl/A9PdSziqC0zoeTfWizwo8UiTYVJG0yFWu8b9pGEDCZQtimrvDszdttutD8Z4m7qRztWzjTRmNppshyzE9knYxCw6nr8a0xOJIGqxJ8bG39aETEIsetiL25XB6inLiabtHSXSE06Fado1PZxQsVKqCSD2g22vYjbmNhicnbCnnjjVIpWOxbStdlO3Igb/DrQMxt5j+9j4Gr0mUl0zOdsxcHCy4hEjE5jvoDMklgTdSwVAijffeqlxLc4qfffUu5P+EdTXoRdLijypLnLk+xUz1GTRmFihse1Ml77dmYiLeZZhvz/AL5a4yKLbsi/W/aGIeFtOlj58/KhbCSBK2ROpNh/fKvGUj/cH8xTfhbCQy4iKOc2iLtqu3Zgns2KI0n4FdwqFumq+1caR5RlM2JLLh4Hl0C7aNyt9hquQLnovM9OVAyLbb+nIkEEHcG4O1dQzniDDJhcPFiUU4nDyGcYbClRhg2qTsYpZIyB3FZLhdRsnO7NXNsxxDSO0r+3Izu+1u9JIzmw6C7VoGgeDnT/AALgA0jwq3NWKbCxgdx5GPgYtAt431n5U/ErRLnk1JUL5Y9RJ6X59K8EA8L+fL4f1p9lsQCzMURmWOPSHUOAWmQE6W2vYn409wGAaSPUsURYi+2Hj0jvhNBNr6t9XoR6guJykx59nOWaMOD+9c+e9W9pljUa+7b8I5n9KEfHxwxGKJVaREW5jUbsWVbKB03oAcOyzHViJNIJ2jBP/UetSZIp7ZVik1pAWeZ4ZUZIl7u41b6QbX7z1HlDR4eL8IYkhnF9LlSVYq9rOoItsbVYMXPh4VWMxqyjbs+Qbyqncb8TnFxjCxYZY+zfVrVrhdmutgotctfn0qKSTdnpQ5JVTYv4q4oveKI3PK4pLlmVRm8mKY26KDv7zW2T5SzNZVJPVyNh76YYzD2IUna9qXfpfsdxSW/0IM2SBn+5TQnnck1HCwQbAUbm7RKxC7nl5DzJpKZyTZQSfKnRVomnLYxWcczzq18ATD9odRsGj5eJBH61TsNhSO/J7lH1o/Isy7LFRONhrC28Qx0/X8qKKSYE7caOvEV7W9q8qkhC5pLc63TGC1AZiTo2oBJrCpM02mW4IJofnHXU1RuKXIU05GIsDSnOJVkjIJsaVytD4x4s5rjDvVj4QzHWjYR+RBKE/mKV4vA71tlGUztIHiFyp58vdR9qjb4uxbm0RjcjqrfI10XL8x7XBNEmKGFmkMWmUtIgcLqvGzoPux11db2pXmnCE8/3mgBiN1v18fChOIMglw0EaHe438AfCtp0nRj4t0n2G5vxVqlhSFY8a8S4d+3dZtTYmNNPahLraw6G4Jsed6VZxhJCwMisDp5HmSQeVquX2S5YnYO7Bdethc8yBa29uXSr2+DjYgsikjlTuHLZOsvBtUcUzfgKUYZZFJ7Qi7KdgRcGw8DRfD/HGkpHi4cDHHGI1ZmwckssipZSLqxs+ke0Ra9dgxmFDra1ca42yAxSlgO61zbwPW3hVOOKaojyZKdjXijj/BrY4CPByAAAxz4F9ZJY3IkBVQoBGxF9q5fm+NaaWWaQKryvqKoNKr5KpJ0jwBNb4kaeQt58z8elLmNY1QUXZ5WKpPL9APU9K8q3/ZhgIpsbGsoDBRJIqHcO6CMKCDzsGLf5aEMrj4J9KHQ9j7LFGVXudtDEWb3VtDCR4gj3GvpGeBnOk+wNJ2PekINxuDddNgbjc7EXtcfPOdsFlkVWLgPIA5NywWRgGJ6kgA3o4V2xWS3pAzy+AA8wPl0HuoRq9vW0WGd/ZVm3tsCdyCbetgT7jXNmxjRPl43J8m/lNGxtQuFjKk6gQdJNjtsUJB94IPvrIZKdCVIRkjbZc+GThysgnmKBlRQArMe64e91VgPZtYjrtVzyTCYHWvZ4hyb7d1h8465NFKyHcFTz3BG3v6VeOBGMkuq2y/C5+VFLauwVp9HX4Y0VDpPMeHv8KgkANaq+wrXVUpSIM2yFXkEmtuXIep5HpUKZathEiqo/Lc2uepNzVkZbi1CxYYjU3PbYf5hUuSFbRbizN6Ymx2DTDpoV0DHckk7/AJct6oOduF3LK1wSChJBsbEbgEG9X/iXNR+zGL9maSQlrMRbRe1iCN77jbYeN7GqlgskKpHLOLMA50noC9xSFXZRv2Vs5BIydrIdKnfT199Rxqir3bAVaMZiWnvFAhc8iRyX1PKkuJ4UnQd91A8BuaJSsFxoRTYnV6Uy4JwgmxsYIusd3PhdfZv7/lQeKy4L1+NdA+zPKezgMp5ym/8AlGw/X30/Gk+ibK2lst9eVJasp5KQzglTVfxGLAB35VbMSvdNc/zfBEliCeZqXOrorwSqyHF50ByNIMfmBO96Bx2EcGlk0bdTS4Y0NllJMRj2vYGutfZ9gOzhFzcnc++uJuhvXRuAOJwi9nKwBHs32uKqjFImnJs62LeFC5plkWIXTItxSCHjLDl9AkW/hcVYcNjUcXBomhaf4NssyyOBNEa6V5+XK9Eh6wN8rflatLVyOYZhrEgE86pv2opGqhBzILW52sD16cqsOJxGhb1x/jziYyzMot3difO1rDw2p2N+ViMyuNCzhKDCvmMKYvT2JLbObRs+g9msh6KWt6mw60/4yy/LVWA5gFw2MIk7SPLFRo9Gr7tpFYkKdPI3ud/DapYTE4AxffLI0tnuLsEJ1rosVO3cDg3FrlfA17hXykL3o5w3aPyJ09nrfQTZgdWgINttR32BuM3bGwVIH4rwGXRlVwOInnN21tIiqgAJA0EAEk2vytYjrtSzLcU0Lq6sVdDqVl2ZT4j5EG4PKrB2mUWFknB35ljb7uwNtW/f3tcX23A2ojJc3w6YUwyYcM5N9dgefna+1ZDbOm6QVmH2gY2SIprRdQsXjQpIRyN2LELf/CAfAiqO6H/bkB4CrNnEuGCJ2YIbfUDa3PbT7qWJp/dFbk4p1aBxOTV0xdFFcgeY+deXPgPgKbxlbg6eRHhUZCdFFL5R/KGVL8ArEhenuAFNOEWwoeRsSuohQYryNEFkBJ13X2rWHdO1DSqCOVqD7Oi5mKJeuIM8MmLwjvPG/ZsxBlcui30kaipuoJA73T2ulXvgedCmrtSzlLEHERzstpSQv7UqjtBY3sbkDa9cFarZ9nuZlJjGTsdx60V6Ba9nee3W1iRcFm5hr2ttcc7/AEqDESguxvfc70viNwDUgNAaFCShcyGpCAbedbXpRmOaKLqDvQTqtjIXyVC9Mtw+7P32Itv09BR2FyGEoCwJUD2STb3jrVGxplVjIrHVr9npa3jVqyzieNk0ydxrb3qLRfcmH4AKisFUKLmwG1UribNSuqx5HlVizLNYVjJVwevOuW5zmXaSE9PnRQjbo6cuKsKwOGlxk6RC9ibt4KvU12vCRrGixqLBQAPdVM+zPDKIC+2pjueoHQVcGqyKo87JK2TdqKyhL1lGAM8ae6aqmKFxVzniuCKQy4C16nzJspwySKVj8JccqrWOw5HSumvghSzF5QjX5UqEWMnJHLZYTeocTEbV05MijvuBRacMRMOQquCZLOaONdmasOT8WYnDqLEut+TenQ10GThCIfhFQf8ADEY/D+Q+tNaFc79EWRfaUjWEoMe4Fzuov1J6DautphLkKHVrrquPDax2vsa5plWRYZZo2lRSiurMCgIIF+YA3F7bV0rBYrCsSyNGAAANtHjfaw8vhS2g4sq32hYr9mwTYjWCdQQR9WYm1lN+Y5nyBr5/xOtnYm5JYk/Gu7cccQZaMNicMzI01nEAERc6yoKEOFIFmJ3vXGZcycMbEcz0HjTscE1sVPJT0DRZRKwBHZ7+MsSn3gtcVDiMukU2IB2B7rK4381JF/KjxnEo5EfAV7/xBOOTUThD23+jlkm+kv2Llwb/ALp+FWfJscseHaJ8OWYm4a1LF4lxNra9r3+ldQyDJEnjwMzO+l4w2KGo3JmOiDQfwguGHupf9cdpv9B/2S00v2I+D2mEGN/Z7RzMcLou0aEgPLrsZDbYHf1q0oML2hP3Nv2zVfu9n2v7CF12/wDj7fryv5UmwWRyyYSea0pk1YhoCLlBHhnVWV/8T/eaf/roubBxLhO25EYOCYuszO/azIpVWg092NmJGokUiTjfY5XQeYzpjbESBpuyxakOYSwDQGxDxk3QtsoO/Pago8aZo8EMRMOyAnlxN9PeWCbUisALkkAAAbm/Wp85ymKFgATIHxMUVlfbDhwhtJ1LuCbdAPOlmdfskc4iCI47YxkJipGcd7Td1KDQR4AncWpcnXsJBGLhjnkmnikic4nASoeUI/aI3iU2WW2jUuki9uTVzXMsveFzG4AYWvZlcbi47yEg/GuhQZLhJcTPEI3RYcVhsP8A81mLCSadHY3AsSEXbpY+NQng2A9m2p2ikmmaNlPekw8eGMwjAPKTUGQnxU7UUVZktHOHwsfYl+0Haa7CLSb6be3q5c9rUXkU6JLH913r216269dNrUfnuCh7DD4qGHsklZlIGIXEoSArKL+2jhT3lYbbU5ybBRlVaw2saakLlI6ZksndU+R/lpnJI1+YHqT8diKW5O4CD0+YoLPM6KCwAY+H9muMukNM1lIjJP1P4T4muc5UGkmdjvckDnT/AP8AWzImkgD05eH1qTLcGoN7WFDkhcWmFjyVNNC2bKZOem+/iPP9KKmyZWTdaeyRIR0omNBot5VKsKRZ9zZzPOuHFCEopvVFny6QMQVNd3aAFTfzquZjhEvewp2ONCcuSxZ9mAcK6kbXq9upqucPzLHLp2Abb31cGAp5NYsKmvaOtWVxgyLUFi9t6nvXrKCLGhasJOhHMvMilOKnCAmmszNHLptdG6+FVviNfatypLTiyiLUkCxZyt+dP8uzFT1rlclw3M3ptlWKYsqg8zVeOq2SZov0dRxWMULe4tSSfOVAJuBbxpDnuPI7gPIADyNwL1YMRhMq0srwvZNQNpZAe6ZGJJAux7r7neyqPC/Sao2EGnsTScQrfn6GopeJbKQp6Hl5C/Kk3GOFgWaM4YaUkBDrqJGtZCjEKdlFrDbba9Q8P5I8gvzFj8jQoKUUxJmWMaRyeV/ifU06yeaOZUw3bdlqieLs5FtAZm1lJ3kF9JuU303BUC+m9o8yyvsyQRY9KQzCxt8appURXKMutFt4ey/7ponjjuJZVll0wTxrpVRbEaiGjjFiyyRvvdjuQK3xWDj0YYvEy4crl/bOIMMsehlg7YnEKO2vctfe9yRVdyjJZJ9TKFCqLs7sERBpZ+855d1SbC5sCbWF6Jz3hqWABiEZb6S8bB1DamTSTYFTdGHeAuVIF7UDin7GqbXo3zbDyCBziooY5RLH2HZpFHqTTIZQvZAa4R93Zjfc7E3NAYfiHFIoVZ3UAQqANNgMO5lhHL8LszD13vSgfiIFv6mvG6e/5/0pUoj1IejiHE9qkvbN2kS6Y227o72wFrfibmN7mpEz/EDftDvCIOS2MIAURkWtpsLeNINe7f3+IVuzGyW52PzNKcBqkWQcTYnVI/atqkKFzZe8YyChIta6kCxHhXmYcUYqbT2spbSwcd1AQ4uNV1UEn1qvlgCQWF99vz3PKo5HIG/9+H1rPrO5j1c/xUbtIJWV5XSZm7pLOrMyOduYLMbefKvcNmeLIjjieUiNzJEqAkpI3Nk0i9zc7ctz40ikbceaj9a6jw79o/7Jg8KRHFKUDwSRh+zkVU0FJCO9fUvWwFwaOMaQEnbKFxBm+MkcJipHLREjs2CoEJ59xQAG8Ta9F4LPdCaaA4ozEYnFyzKulZXLBbDUNRv3rcyDcX8qUhb+opiQDpnfPs+Z8Xhu0UqBqKbk+0oBI2HgRVf4+y7EYYmZ3jaPUqd0sSrMCQGuoFyATYE+dri6v7N+Mxg4HgaMOpkMguxWxZVU8h00i3hevOJ+KJMz/wDZxwLGvaLISHZ7lQRqsQLE6jc33rFFp2ZcWqszhfEtM+w7o5n6V0SOFTEd9JHkTf4UkybK1w8QRQOW58TR+XP39LdaTKTkynHjUEL/ANrZWKklQeTWvbY0Xh8U6aS3aMrBeUZPtFxtY7+z79/DefH4VFJPUVVsbiBtGRpsLXud9ybm587beFN+q42hP3JTplkizOGRCYpNXla1tr+Pjce6qnnGPA5nxpHj42gJdCRz2670lmxsje0b0lY5WPc4VsZ4jOCpBB5G/wAK6jlOaCWFJAeaiuISEmuhfZzi9UDR9Ub8jTqfsmdei7ftFZQZrK6jCx3rZTUV69BrDTd4w3MVUeKcLpJPlVuDVXOMAezJHPlXNWFF0cmxntH13NOuHYQgaZh0soPzrzCZSGa7chufOmOOZdOkbW5CmtLpAptbZXcZiSWY9T+W4P0q14zNk7LU0cg16zYSqRZxKCAey3FpWFCcP8LNMQz3tfl+tXTEZCgUKAAK6bgqQEObtlDzPGRshGtWuR2KC91+81KdBQdlZDoNib7HperxwvlwSFAR03pYnDMbSq2nlvVrYBEtQylGtHRU7fIr3EbyRqWhdksQ3dI3K3sdwfE1yrM5TIzPJqLmwJJFzpAH7vgAK6nmmKDXU9aoueZQQ23L+yaxOhiVoO4fB7C8fagImKEpSdIBraSORdTOAFPZKratW6xuBaxuy4jZvvXkMpjAxiktiI5U7RpESHZAbXkTZbqQ0UhsACDRMJmM2HdnjdkNiDbqDsAQQQw35EEVrmmfYjEAGWRmsdr6QBzJIVAFB35gXN96Nb2LetC+y6eR3PiOg/h86KXE7KmkWsBusZPe3PeKar7877dKDk5AeV/if0tUq+36H+X/AGo6Qu2gbu97ZuX7w/eX/DW8XeCruAzqm3Ox57++9e6QQ3p/qWtEOkKfB9Q9V029R5UDQ6Mi+YTFoHCCTDxqHREhVQ7kNIqlG1R6tRBJL6juao+O9qcdBM1h0HfcWHgOVOW4hm1iSyHeNrmSbTdAoUFDJuAEAta1hSKZiWccyxcsTtdu8dgOW96GgrNJT7B/wgfD/ejssi1OR0P6XFCYN15SatI37oUtvflq2G9qKbEIGUw6gNLL94EvqsbW0jzFaYx1lPBmNxrhYISIy5UzNcRiwu2p+Zt4AczaieNOBsTlojkmZJonITtEuCr2J0sD4gEjmNjyrpeB43ys4KCJMT+yspgZk0yqy6JUeVCUG+oBwTc31b15mnGuVNhcTDLiFxZkaZkiWKTV37lEGu4BX964A57UNtG0mjjWGw+puzXdr2FuZPS1dA4Nykxw9rou78vS1x+W9c4w85LHlsT0XcX58q7DlaGKKIkCwAvsOop+SVwRLgxtZX/wDxWbutwRyBvU/D2ZqJNLzdi8qDRLpBEXeDC5LbalW3T2hW2dJHp1gix9KqEuOdTbukCwF44ybKLAXK3NgB8KzHBSQ/Nl4dl7zXNI5g0sZNtViCNJ5GxtfrYmqZmU/n7/AA/StsPmDuLKVtsSAqLe17eyB4mhcQbNZuRpsVWifLvyF2Kxurut8fGh2jUjatsVGL/KhbH0NF9aJn8iSdMx4rVYeAZtOIdP3kv/APk/1pEj3G9WvgXA21zH+FfmaCcUkMxzcmqLfesqMtWUgqssRNYDUeqsDUoaSg0Fm+G7SMiig1etytXHHO5mCkr8aGwUAlmC9Buf0qyZtw3rYlGtf4UNkWRyRSEnceIpiaSMe2XDAwrGlDYvEE1O97ctqhijF7mkMabYVdO9Ls4zEDa9MZGFqr+a5aWBIO5rjKvorWNx2piff+lL2zFgp69PjTODJZHG+wv+QppLlEUaAH3n1onNGRxys5nmjFtz1Py/3/Kl8mwA8r/E/parNxLEivoTpt8f6mkM0V3t0uB7htTou0KlqWyJh3wvmq/IGsRrknyY/ka8Ru9f+I/AE1HG/tfwn8yB9aKweJ7E+zeg/mFSKLr/AJj8hQ6ey3qo/mP0qQPZP830obDcSaRNl9P9TVrIBrv5g/Gxr0Sd1f8AMPhY/WvZhy81H5XH0rQSBIdyvkR7x/UVoE2I9D9D8/yphp72r0b4gGiEwnet0uR7jtXcTPsFRkuovvY28wDy3+NbqSxULZdRA3NhcfvMenLyos4E3I8QR7xy/OhEiI2tfrY+XP8AL5VlBKSY/wAtyR1k70Rtse9cXB8ADV/7eUqE35AcqoOV5iVj0CSYBfwajpAP7pvy9wpjHmZBVxqup5lrm1FBcnQrLPhsfY6GUKNdwOm36VqmXo63G/jTeLGJiYNXUc/Wq62NaF79D8D5GiTfXsNqNKXaYtxcLQPrHK9TYjNkYd5VO3Xb+zTiVkmFxyPMVWsxy4pe3KmqSl32TSjPHfDpgMku/l0rBY7ciKg0Hka2jjY7WNx/dqY2SKOwmKIsQFF2O1vGuhZNhexhVOu5PqaQcIYBrtK62NrLfn5mrLLJ4VNOVui7FClZ6X86yhO0Fe0AwtOuvQ/WoC1eBqUOCg9bBqGV+teh+tcaEXojBgXoAP1onL33rGchlioQRtVdxbsptVnFLM0woIJHOsQUrKrjMaQbVLhszDd0+lKccrKST7vfQ0ewLf3vRuKYqM2iyPOinmLVU8/zwMdK8vHyG9RY2drHfy+P9L1XsQDZj7vj/QGuji/Jss/pALyln1Hzb4AmoIRzPgG+Vh+ZFSdGPoPib/6a8jHdY+g+Jv8A6aahTYL2ezH/AAn8yB9aGRdn9B/OtMdPdb1UfG5/01AU7jfxL8nP0FY0FCQPGO438SfJ690dw/xD8wf0qRB3D/EnyeplUaD/ABL8npY4hjj7o/ib8wv6US8fdU+o+Fj/AKqjT2D5Mv5hv0orDi6+jfzD/wAaZEVk0gnDYa4U+VvgT9LU2XBcj4gflt9K0y6Hu+jfMf8AjT+CHujyPzH9KNuieOxJicDve3Ox/v30DicDZr28/jVtkguvp9d/1oHF4fu38NvqPrQWHVFYaHQ3l9DXvI2Pp7vGi8bHsD4bfp9aCY3APhsfpXJ07OceSph2SZq0DkX7p2I6U/xUKzLqXkefkaps4uAfcfpTTJM17M77qdm+hp01fkuxWHJx8JdGsc7xtpuRvt+leYnNS40nTfp+lN82wSuNa/34UuybJjK+phZFO/mR4eVCpJ7YcozjpdDTIcl7RQ8o/hXy86sMeDRRYAC3gBU1wALdKgll6ilttjFFJEuoW2oWWXrWskvUUJNN1FdRzZuZRWUGZB41laDZdy1681X2rKyklJ7q6V4X6VlZXGGM/Sjcv51lZWM5Dwnag8VJ0rKyhGMS5xgA67etVeeAr3ff8ayspkGImhZj49gPf8f9qR5gtlA9T9B8j8a8rKb6EexTMO6PMk/QfI1jewPNj+QH6msrKxDGase4PNj/ANIH/dUMn/L9WH/SD/3VlZWs6BpCvcb+JPlJUqjuN/EnyesrKSygjT2W9UP8w+tGYHk3+U/A2/1VlZTICspactUaT6A/Aj9TTrCtsR5fL+l6ysopCYkq7gjy+W9CSLe48R8txXlZQIYxFiE3I8R+fMUnHO3jt+h+NZWVxiI1PQ9dj/frWZbHqlCnqbGsrKdjfiT5UuR0jDYZQoUgHxqRAE2rKyklRHLLY0JJLY+VZWVoLBpZrHyoWWWx8jWVlECyA+RrKysraAs//9k=" alt="Digital Marketing" />
-        </div>
-        <div class="hero-bg-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <p class="section-subtitle">We offer comprehensive digital marketing solutions</p>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="images/dm1.jpeg" alt="SEO" />
-                    </div>
-                    <h3>SEO Optimization</h3>
-                    <p>Improve your search engine rankings and drive organic traffic to your website with our proven SEO strategies.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="images/dm2.jpeg" alt="Social Media" />
-                    </div>
-                    <h3>Social Media Marketing</h3>
-                    <p>Build your brand presence across all major social platforms and engage with your target audience effectively.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="images/dm3.jpeg" alt="PPC" />
-                    </div>
-                    <h3>PPC Advertising</h3>
-                    <p>Maximize your ROI with targeted pay-per-click campaigns across Google Ads, Facebook, and other platforms.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="images/dm4.jpeg" alt="Content Marketing" />
-                    </div>
-                    <h3>Content Marketing</h3>
-                    <p>Create compelling content that resonates with your audience and drives meaningful engagement.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="images/dm5.jpeg" alt="Email Marketing" />
-                    </div>
-                    <h3>Email Marketing</h3>
-                    <p>Build lasting relationships with your customers through personalized email campaigns and automation.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="images/dm6.jpe        g" alt="Analytics" />
-                    </div>
-                    <h3>Analytics & Reporting</h3>
-                    <p>Track your success with detailed analytics and comprehensive reporting to optimize your strategies.</p>
-                </div>
+            <div class="flex-initial">
+                <ul class="flex">
+                    <button class="btn btn-primary btn-shadow bg-gradient text-white text-uppercase">start a
+                        project</button>
+                </ul>
             </div>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About DigitalBoost</h2>
-                    <p>We are a team of passionate digital marketing experts dedicated to helping businesses thrive in the digital landscape. With over 10 years of combined experience, we've helped hundreds of companies achieve their online goals.</p>
-                    <div class="stats">
-                        <div class="stat">
-                            <h3>500+</h3>
-                            <p>Happy Clients</p>
+    </header>
+    <main id="site-main">
+        <section class="banner-area font-poppins">
+            <div class="container mx-auto banner-title">
+                <div class="title">
+                    <span class="d-inline btn btn-primary bg-gradient-peach text-red animate__animated animate__fadeInUp">Digital Experience</span>
+                    <div class="py-2 branding text-dark text-lg sm-text-xl font-bold ">
+                        <span class="d-block animate__animated animate__fadeInDown">Branding, Digital</span>
+                        <span class="d-block animate__animated animate__fadeInDown">Marketing and</span>
+                        <span class="d-block animate__animated animate__fadeInDown">Business solutions</span>
+                    </div>
+                    <div class="py-5 animate__animated animate__fadeInUp">
+                        <p class="text-gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, nostrum!</p>
+                        <p class="text-gray">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, consectetur?</p>
+                    </div>
+                    <div class="py-5 animate__animated animate__fadeInUp">
+                        <a href="#" class="btn btn-primary bg-gradient text-white btn-shadow">Let's go</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="agency-area">
+            <div class="container mx-auto text-center font-poppins">
+                <span class="text-red">Join our Agency</span>
+                <div class="area-title">
+                    <h1 class="text-lg text-dark">
+                        We design and build beautiful digital <br>
+                        products that make a difference
+                    </h1>
+                </div>
+                <div class="grid cols-1 lg-cols-3 py-10">
+                    <div class="grid-items px-5">
+                        <div class="text-center text-2xl text-red">
+                            <i class="bi bi-bricks"></i>
                         </div>
-                        <div class="stat">
-                            <h3>1000+</h3>
-                            <p>Projects Completed</p>
+                        <div class="text-center">
+                            <h4 class="text-md py-2">Grow Your Business</h4>
+                            <p class="text-gray">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam nesciunt ducimus distinctio minima dicta nobis, unde obcaecati ipsum rerum nulla..</p>
                         </div>
-                        <div class="stat">
-                            <h3>10+</h3>
-                            <p>Years Experience</p>
+                    </div>
+                    <div class="grid-items px-5">
+                        <div class="text-center text-2xl text-red">
+                            <i class="bi bi-megaphone"></i>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="text-md py-2">Digital Marketing</h4>
+                            <p class="text-gray">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima repellat dolorum accusamus temporibus, delectus deleniti similique porro cumque nesciunt nostrum labore alias sint recusandae aliquid?</p>
+                        </div>
+                    </div>
+                    <div class="grid-items px-5">
+                        <div class="text-center text-2xl text-red">
+                            <i class="bi bi-mouse"></i>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="text-md py-2">Search Engine Optimization</h4>
+                            <p class="text-gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, aut rerum necessitatibus quas nemo qui?</p>
                         </div>
                     </div>
                 </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&h=400&fit=crop&crop=center" alt="Our Team" />
+            </div>
+        </section>
+        <section class="container mx-auto life-area">
+            <div class="grid cols-1 lg-cols-2 text-center md-text-left">
+                <div class="grid-images">
+                    <div data-rellax-speed="2" class="item-one rellax"></div>
+                    <div data-rellax-speed="-1" class="item-two rellax"></div>
+                    <div data-rellax-speed="1" class="item-three rellax"></div>
+                </div>
+                <div class="py-10">
+                    <span class="d-inline btn btn-primary bg-gradient-peach text-red">Digital Experience</span>
+                    <div class="font-poppins">
+                        <h1 class="text-lg text-dark py-5">
+                            Connect people in <br>
+                            Digital Life
+                        </h1>
+                        <p class="py-5 text-gray">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, dolor!.</p>
+                        <p class="text-gray py-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum a tempora sed. A minima ipsum, molestias odit sint quisquam soluta ipsam quos beatae hic consequatur dolorem?</p>
+                        <div class="py-5">
+                            <a href="#" class="btn btn-primary bg-gradient btn-shadow text-white">More About Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container mx-auto counting-area">
+            <div class="grid cols-1 lg-cols-2">
+                <div class="grid-one text-center md-text-left">
+                    <span class="d-inline btn btn-primary bg-gradient-peach text-red">Digital Experience</span>
+                    <div class="font-poppins">
+                        <h1 class="text-lg text-dark py-5">
+                            The hundres of <br>
+                            completed DM pics <br>
+                            still counting
+                        </h1>
+                        <p class="text-gray mx-auto md-mx-initial">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem unde ullam ex dolores fugit. Placeat pariatur rem repellat aliquam provident.
+                        </p>
+                    </div>
+                </div>
+                <div class="grid-two">
+                    <div class="count-box">
+                        <div class="grid lg-cols-2 btn-shadow font-poppins">
+                            <div class="item1 text-center">
+                                <h1 class="text-dark text-xl">21+</h1>
+                                <span class="text-gray">Total Top Services</span>
+                            </div>
+                            <div class="item2 text-center">
+                                <h1 class="text-dark text-xl">29+</h1>
+                                <span class="text-gray">Countries</span>
+                            </div>
+                            <div class="item3 text-center">
+                                <h1 class="text-dark text-xl">21%</h1>
+                                <span class="text-gray">Positive Feedback</span>
+                            </div>
+                            <div class="item4 text-center">
+                                <h1 class="text-dark text-xl">3,798</h1>
+                                <span class="text-gray">Usual Users</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <sectio class="container mx-auto card-area py-10 px-10">
+            <div class="grid cols-1 lg-cols-3 font-poppins">
+                <div class="bg-gradient-peach rellax" data-rellax-spped="2">
+                    <div class="card px-10 py-10">
+                        <span class="d-block text-red text-xl"><i class="bi bi-app-indicator"></i></span>
+                        <h2 class="text-dark">Mobile App</h2>
+                        <p class=" py-5 text-gray">
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe, aspernatur excepturi magni reprehenderit deserunt.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-gradient-blue rellax" data-rellax-spped="-1">
+                    <div class="card px-10 py-10">
+                        <span class="d-block text-red text-xl"><i class="bi bi-lightbulb"></i></span>
+                        <h2 class="text-dark">Strategy</h2>
+                        <p class=" py-5 text-gray">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis recusandae quia minus explicabo enim? Ducimus maxime sit nisi voluptatibus pariatur?
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-gradient-red rellax" data-rellax-spped="2">
+                    <div class="card px-10 py-10">
+                        <span class="d-block text-red text-xl"><i class="bi bi-phone"></i></span>
+                        <h2 class="text-dark">E-Commerce</h2>
+                        <p class=" py-5 text-gray">
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur totam dolores et laudantium commodi animi laborum corrupti molestiae voluptatum excepturi?
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-gradient-yellow rellax" data-rellax-spped="2">
+                    <div class="card px-10 py-10">
+                        <span class="d-block text-red text-xl"><i class="bi bi-apple"></i></span>
+                        <h2 class="text-dark">Branding</h2>
+                        <p class=" py-5 text-gray">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum aliquam at iusto inventore suscipit voluptates harum commodi maxime sed sit?
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-gradient-purple rellax" data-rellax-spped="1">
+                    <div class="card px-10 py-10">
+                        <span class="d-block text-red text-xl"><i class="bi bi-chevron-bar-expand"></i></span>
+                        <h2 class="text-dark">Experience Design</h2>
+                        <p class=" py-5 text-gray">
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. In, natus reiciendis? Porro ab tempore perferendis accusamus dolorum. Possimus, cumque!
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-gradient-yellow rellax" data-rellax-spped="-1">
+                    <div class="card px-10 py-10">
+                        <span class="d-block text-red text-xl"><i class="bi bi-building"></i></span>
+                        <h2 class="text-dark">Web Devalopment</h2>
+                        <p class=" py-5 text-gray">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad facere omnis voluptatibus, dolore ipsa labore sunt voluptate beatae accusantium possimus?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </sectio>
+        <div class="container mx-auto py-10 recent-DM pic-area">
+            <div class="title">
+                <span class="d-inline btn btn-primary bg-gradient-peach text-red">Digital Experience</span>
+                <div class="font-poppins">
+                    <h1 class="text-lg text-dark py-5">
+                        Some recent DM pic <br>
+                        we really proud of <br><br>
+                    </h1>
+                </div>
+                <div class="images-flex font-poppins">
+                    <div class="flex-item animate__animated animate__fadeInUp">
+                        <img src="./DM pic/img1 (1).png" alt="img1" class="w-100">
+                        <h3 class="text-dark">Photo Retouching</h3>
+                        <span class="text-gray">Branding</span>
+                    </div>
+                    <div class="flex-item animate__animated animate__fadeInUp">
+                        <img src="./DM pic/img2 (1).png " alt="img1" class="w-100">
+                        <h3 class="text-dark">Apple iPhone</h3>
+                        <span class="text-gray">Branding</span>
+                    </div>
+                    <div class="flex-item animate__animated animate__fadeInUp">
+                        <img src="./DM pic/img3 (1).png " alt="img1" class="w-100">
+                        <h3 class="text-dark">Yoga</h3>
+                        <span class="text-gray">Branding</span>
+                    </div>
+                    <div class="flex-item animate__animated animate__fadeInUp">
+                        <img src="./DM pic/img4.png" alt="img1" class="w-100">
+                        <h3 class="text-dark">Recent News</h3>
+                        <span class="text-gray">Branding</span>
+                    </div>
+                    <div class="flex-item animate__animated animate__fadeInUp">
+                        <img src="./DM pic/img5.png" alt="img1" class="w-100">
+                        <h3 class="text-dark">New Apps</h3>
+                        <span class="text-gray">Branding</span>
+                    </div>
+                    <div class="flex-item animate__animated animate__fadeInUp">
+                        <img src="./DM pic/img6.png" alt="img1" class="w-100">
+                        <h3 class="text-dark">iPhone 13Pro</h3>
+                        <span class="text-gray">Branding</span>
+                    </div>
+                    <div class="flex-item animate__animated animate__fadeInUp">
+                        <img src="./DM pic/img7.png" alt="img1" class="w-100">
+                        <h3 class="text-dark">Share Market</h3>
+                        <span class="text-gray">Branding</span>
+                    </div>
+                    <div class="flex-item animate__animated animate__fadeInUp">
+                        <img src="./DM pic/img8.png" alt="img1" class="w-100">
+                        <h3 class="text-dark">Yoga</h3>
+                        <span class="text-gray">Branding</span>
+                    </div>
+                    <div class="flex-item">
+                        <img src="./DM pic/img9.png" alt="img1" class="w-100">
+                        <h3 class="text-dark">Yoga</h3>
+                        <span class="text-gray">Branding</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+        <section class="article-area container mx-auto py-10">
+            <div class="area text-center font-poppins">
+                <span class="text-red">Our Recent Articles</span>
+                <h1 class="text-lg text-dark">Articles Daily Updates</h1>
+            </div>
+            <div class="grid cols-1 lg-cols-3 font-poppins py-10">
+                <div class="card animate__animated animate__fadeInLeft">
+                    <article class="btn-shadow">
+                        <img src="./article pic/img1 (2).png" class="w-100" alt="">
+                        <div class="px-5 py-5">
+                            <span class="text-gray">Category 6 hpurs ago</span>
+                            <a href="#">
+                                <h2 class="text-dark">Free advertising of your Online Business</h2>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                <div class="card card animate__animated animate__fadeInLeft">
+                    <article class="btn-shadow">
+                        <img src="./article pic/img2 (2).png" class="w-100" alt="">
+                        <div class="px-5 py-5">
+                            <span class="text-gray">Category 6 hpurs ago</span>
+                            <a href="#">
+                                <h2 class="text-dark">Free advertising of your Online Business</h2>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                <div class="card card animate__animated animate__fadeInLeft">
+                    <article class="btn-shadow">
+                        <img src="./article pic/img3 (2).png" class="w-100" alt="">
+                        <div class="px-5 py-5">
+                            <span class="text-gray">Category 6 hpurs ago</span>
+                            <a href="#">
+                                <h2 class="text-dark">Free advertising of your Online Business</h2>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2 class="section-title">Our Portfolio</h2>
-            <p class="section-subtitle">Check out some of our recent work</p>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop&crop=center" alt="E-commerce Project" />
-                    <div class="portfolio-overlay">
-                        <h3>E-commerce Growth</h3>
-                        <p>Increased online sales by 300%</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop&crop=center" alt="Restaurant Marketing" />
-                    <div class="portfolio-overlay">
-                        <h3>Restaurant Chain</h3>
-                        <p>Boosted local presence by 250%</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop&crop=center" alt="Tech Startup" />
-                    <div class="portfolio-overlay">
-                        <h3>Tech Startup</h3>
-                        <p>Generated 1M+ app downloads</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop&crop=center" alt="Healthcare Marketing" />
-                    <div class="portfolio-overlay">
-                        <h3>Healthcare Provider</h3>
-                        <p>Improved patient engagement by 400%</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">Ready to boost your digital presence? Let's talk!</p>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <h3>Email</h3>
-                        <p>iswarsahu1234@gmail.com</p>
-                    </div>
-                    <div class="contact-item">
-                        <h3>Phone</h3>
-                        <p>(+91)6272853203</p>
-                    </div>
-                    <div class="contact-item">
-                        <h3>Address</h3>
-                        <p>veltech universisty,avadi,chennai.</p>
-                    </div>
+        </section>
+        <section class="ready-area container mx-auto py-5">
+            <div class="flex flex-wrap font-poppins btn-shadow py-10 sm-px-10">
+                <div class="w-50">
+                    <h1 class="text-lg sm-text-xl text-dark">Ready to Get Started?</h1>
+                    <p class="text-gray">
+                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, alias natus dolorem totam nulla non. Voluptas corporis delectus quidem maiores!
+                        <br><br>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis cumque saepe eius, similique illo at, porro rerum doloribus alias dolorum soluta aut laboriosam non eos iste illum minima possimus magni!
+                        <br><br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt veniam blanditiis laboriosam, explicabo id natus!
+                    </p>
                 </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" rows="5" required></textarea>
-                    <button type="submit" class="btn-primary">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>DigitalBoost</h3>
-                    <p>Boosting your digital presence with innovative marketing solutions.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#services">SEO</a></li>
-                        <li><a href="#services">Social Media</a></li>
-                        <li><a href="#services">PPC</a></li>
-                        <li><a href="#services">Content Marketing</a></li>
-                    </ul>
+                <div class="cols py-5">
+                    <a href="#" class="btn-shadow text-white btn btn-primary d-block text-center bg-gradient">
+                        <span class="text-uppercase text-sm">Get Started</span>
+                    </a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 DigitalBoost. All rights reserved.</p>
+        </section>
+    </main>
+    <footer id="footer">
+        <section class="container mx-auto py-10">
+            <div class="grid md-cols-2 lg-cols-4 font-poppins">
+                <div class="text-gray text-center md-text-left">
+                    <span>
+                        Jhatipadara, <br>
+                        Berhampur, <br>
+                        Ganjam, Odisha, <br>
+                    </span>
+                    <span class="d-block">9908386999</span>
+                    <span class="text-red">Iswarsahu222@gmail.com</span>
+                </div>
+                <div class="text-gray text-center md-text-left">
+                    <h3 class="text-dark">About</h3>
+                    <div class="py-5">
+                        <a href="#" class="d-block">
+                            <span class="text-gray">About Us</span>
+                        </a>
+                        <a href="#" class="d-block">
+                            <span class="text-gray">Blog</span>
+                        </a>
+                        <a href="#" class="d-block">
+                            <span class="text-gray">Portfolio</span>
+                        </a>
+                        <a href="#" class="d-block">
+                            <span class="text-gray">Career</span>
+                        </a>
+                        <a href="#" class="d-block">
+                            <span class="text-gray">Partners</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="text-gray text-center md-text-left">
+                    <h3 class="text-dark">Services</h3>
+                    <div class="py-5">
+                        <a href="#" class="d-block">
+                            <span class="text-gray">eCommerce</span>
+                        </a>
+                        <a href="#" class="d-block">
+                            <span class="text-gray">Branding</span>
+                        </a>
+                        <a href="#" class="d-block">
+                            <span class="text-gray">Strategy</span>
+                        </a>
+                        <a href="#" class="d-block">
+                            <span class="text-gray">Design</span>
+                        </a>
+                        <a href="#" class="d-block">
+                            <span class="text-gray">Digital Marketing</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="text-gray text-center md-text-left">
+                    <h3 class="text-dark">Newsletter</h3>
+                    <p>Stay updated with our latest insights, tips, and exclusive offers. Subscribe to our newsletter and be the first to know about new trends, services, and special deals – delivered straight to your inbox
+                    </p>
+                    <div class="flex py-5">
+                        <input type="text" class="subscribe-text" placeholder="Enter Email Address">
+                        <button class="btn btn-go">Go</button>
+                    </div>
+                </div>
             </div>
-        </div>
+            <div class="copyrights font-poppins">
+                <p class="text-gray py-5 text-center">
+                    © 2025 Digital Marketing | All rights reserved.
+                </p>
+            </div>
+        </section>
     </footer>
-
-    <script src="js.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"
+        integrity="sha512-JRlcvSZAXT8+5SQQAvklXGJuxXTouyq8oIMaYERZQasB8SBDHZaUbeASsJWpk0UUrf89DP3/aefPPrlMR1h1yQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js" integrity="sha512-f5HTYZYTDZelxS7LEQYv8ppMHTZ6JJWglzeQmr0CVTS70vJgaJiIO15ALqI7bhsracojbXkezUIL+35UXwwGrQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./Javascript/script.js"></script>
 </body>
 </html>
