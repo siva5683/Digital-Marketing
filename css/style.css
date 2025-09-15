@@ -193,7 +193,10 @@
 }
 .cols-1{
     grid-template-columns: repeat(1,minmax(0,1fr));
-
+}
+.w-100{
+    width: 100%;
+}
 .w-50{
     width: 50%;
 }
@@ -202,7 +205,6 @@ body{
     background: url('../images/backgroundpng.png') no-repeat;
     background-size: cover;
 }
-
 @media (min-width:640px){
     .container{
         max-width: 640px;
